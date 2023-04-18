@@ -113,13 +113,21 @@ void ColorWipeRainRunner2(){
   }
 }
 
+void BreathWrapper(){
+
+}
+
+//https://github.com/marmilicious/FastLED_examples/blob/master/breath_effect_v2.ino
+void Breath(){
+  uint8_t brightness = (exp(sin(millis() / 2000.0 * PI)) - 0.368) * 42.546;
+ // float dV = ((exp(sin(pulseSpeed * millis()/2000.0*PI)) -0.36787944) * delta);
+}
+
 void ColorWipeRainWrapper(CRGB color, bool allowReverse, int wait)
 {
   Serial.println("ColorWipeRainWrapper");
   ColorWipeRain(color, allowReverse, wait);
 }
-
-
 
 void ColorWipeRain(CRGB color, bool allowReverse, uint8_t wait)
 {
@@ -218,9 +226,6 @@ CRGB FixColor(CRGB color, int stripe){
 //  }
   return new_color;
 }
-
-
-
 
 int rdms[NUM_STRIPS][3];
 CHSV colorOC[NUM_STRIPS];
